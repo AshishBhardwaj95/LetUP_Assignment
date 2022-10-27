@@ -3,8 +3,9 @@
 using namespace std;
 
 
-int[] MultiplyTwoArray(int[] a,int[] b)
+int * MultiplyTwoArray(int a[],int b[])
 {
+
     for (int i=0;i<10;i++)
     {
         a[i] = a[i] * b[i];
@@ -16,7 +17,7 @@ int[] MultiplyTwoArray(int[] a,int[] b)
 int main()
 {
     int a[10],b[10];
-    int temp[10];
+    int *temp;
 
     cout << "Enter A Array Element\n";
     for(int i=0;i<10;i++)
@@ -37,7 +38,7 @@ temp = MultiplyTwoArray(a,b);
 
     for(int i=0;i<10;i++)
     {
-        cout<<temp[i]<<endl;
+        cout<<*(temp+i)<<endl;
     }
 }
 
