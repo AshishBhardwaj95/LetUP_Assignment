@@ -1,0 +1,26 @@
+What is Dynamic Memory Allocation?
+
+Ans. In dynamic memory allocation, memory is allocated during runtime. 
+But, in this case, it is the responsibility of a programmer to deallocate the dynamically allocated memory when it’s no longer in use. 
+Otherwise, it leads to memory leaks.
+
+Uses of Dynamic Memory Allocation
+There are times when we do not know in advance the amount of memory required to store some data. 
+Using dynamic memory allocation, we can allocate memory of variable size at runtime.
+It provides flexibility to the programmer. Programmers can allocate and deallocate memory as and when needed.
+
+C++ provides two unary operators, new and delete, to dynamically allocate and deallocate memory efficiently.
+
+For Example:-
+
+#include <iostream>
+using namespace std; 
+
+int main()
+{
+    int* val = NULL;
+    val = new int;
+    *val = 123;
+    cout << "Value is : " << *val << endl;
+    delete val;
+}
