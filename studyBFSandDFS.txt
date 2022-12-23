@@ -1,0 +1,21 @@
+Breadth-First Search:
+BFS, Breadth-First Search, is a vertex-based technique for finding the shortest path in the graph. 
+It uses a Queue data structure that follows first in first out. In BFS, one vertex is selected at a time 
+when it is visited and marked then its adjacent are visited and stored in the queue. 
+It is slower than DFS. 
+
+
+Depth First Search:
+DFS, Depth First Search, is an edge-based technique. It uses the Stack data structure and performs two stages, 
+first visited vertices are pushed into the stack, and second if there are no vertices then visited vertices are popped. 
+
+
+difference b/w 	 BFS	          DFS
+1	Definition	BFS, stands for Breadth First Search.	        1.  DFS, stands for Depth First Search.
+2	Data structure	BFS uses Queue to find the shortest path.	2.  DFS uses Stack to find the shortest path.
+3	Source	BFS is better when target is closer to Source.	  3.  DFS is better when target is far from source.
+4	Suitablity for decision tree	As BFS considers all        4.  DFS is more suitable for decision tree. As with one decision, we need to traverse further to augment the decision. If we reach the conclusion, we won.
+  neighbour so it is not suitable 
+    for decision tree used in puzzle games.	
+5	Speed	BFS is slower than DFS.	                              5. DFS is faster than BFS.
+6	Time Complexity	Time Complexity of BFS = O(V+E) where V is vertices and E is edges.	 6. Time Complexity of DFS is also O(V+E) where V is vertices and E is edges.
