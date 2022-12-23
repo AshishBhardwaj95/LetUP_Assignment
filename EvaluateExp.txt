@@ -1,0 +1,84 @@
+Ques :- Evaluate Exp : (a/(b-c)*d+e) ?
+
+#include <iostream>
+using namespace std;
+#define max 30
+#include<string.h>
+int top=-1;
+int stack[max];
+
+
+char pop()
+{
+  if(top==-1)
+  cout<< "stack underflow";
+else
+ return (stack[top--]);
+}
+
+int match(char a ,char b)
+{
+   if(a=='['  &&  b==']')
+   return 1;
+  if(a=='('  && b==')')
+  return 1;
+  if(a=='{' && b=='}')
+   return 1;
+}
+
+void push(char item)
+{
+  if(top==max-1)
+   cout<<"stack overflow";
+else
+  top++;
+ stack[top]=item;
+}
+
+
+
+int check(char exp[])
+{
+   int i ;
+  char temp;
+ for(i=0;i<strlen(exp);i++)
+{
+   if(exp[i]=='('  || exp[i] == '[' ||exp[i] == '{')
+   { push(exp[i]);}
+ if(exp[i] == ')' || exp[i] == ']' ||exp[i] =='}')
+  {
+  if(top==-1)
+     {cout<<"Right braces are more than left braces";}
+  else
+ {
+   temp = pop();
+   if(!match(temp,exp[i]))
+{
+  cout<<"mismatched braces";
+ }
+}
+if(top==-1)
+{
+   cout<<"balanced braces";
+   return 1;
+}
+}
+}
+}
+
+int  main()
+{
+   char exp[max];
+  int valid;
+  cin.get(exp,max);
+ valid=check(exp);
+if(valid==1)
+  {        cout<<"valid expression";}
+else
+ {cout<<"Invalid expression";}
+ 
+ return 1;
+}
+
+
+
